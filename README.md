@@ -1,3 +1,6 @@
+# Makers BnB Team Challenge
+
+## User stories
 ```
 As a user,
 So that I can use the MakersBnB,
@@ -75,3 +78,19 @@ As a user,
 So that I know if a place is good,
 I can read reviews from previous renters.
 ```
+
+## Tools/Languages  
+
+- Sinatra
+- Capybara
+- Ruby v 2.4.0
+- rspec
+- Postgres SQL databases
+- DataMapper
+
+## Team
+
+- Clem Capel-Bird
+- Christos Paraskeva
+- Eva Balog
+- Alex Imm
