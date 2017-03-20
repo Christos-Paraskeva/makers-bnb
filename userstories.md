@@ -1,3 +1,4 @@
+```
 As a user,
 So that I can use the MakersBnB,
 I can sign up with a name, an email address and a password.
@@ -73,3 +74,4 @@ I can leave a review if I have stayed there.
 As a user,
 So that I know if a place is good,
 I can read reviews from previous renters.
+```
