@@ -1,6 +1,6 @@
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require File.join(File.dirname(__FILE__), '..', 'app/app.rb')
 #require './models'
 require 'features/web_helpers'
 require 'capybara'
@@ -30,16 +30,20 @@ Capybara.app = MakersBNB
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
 
-  config.around(:each) do |example|
-   DatabaseCleaner.cleaning do
-     example.run
-   end
-  end
+  
+  # config.before(:suite) do
+  #   DatabaseCleaner.strategy = :transaction
+  #   DatabaseCleaner.clean_with(:truncation)
+  # end
+  #
+  # config.around(:each) do |example|
+  #  DatabaseCleaner.cleaning do
+  #    example.run
+  #  end
+  # end
+
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

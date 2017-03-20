@@ -1,4 +1,7 @@
+ENV['RACK_ENV'] ||= 'development'
+
 require 'sinatra'
+require_relative 'database_setup'
 
 class MakersBNB < Sinatra::Base
 
