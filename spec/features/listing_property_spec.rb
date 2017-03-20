@@ -5,11 +5,8 @@ feature 'As a user' do
     visit ('/property')
     click_button('List Property')
     expect(current_path).to eq '/property/new'
-
-    within '/property/new' do
-      expect(page).to have_content('Name')
-      expect(page).to have_content('Description')
-      expect(page).to have_content('Price Per Night')
-    end
+    expect(page).to have_content('Name:')
+    expect(page).to have_content('Description:')
+    expect(page).to have_content('Price Per Night:')
   end
 end
