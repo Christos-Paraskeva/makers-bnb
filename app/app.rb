@@ -21,16 +21,14 @@ get '/sign_up' do
 end
 
 post '/sign_up' do
-  user = User.create(name:      params[:Name],
-                     email:     params[:Email],
-                     password:  params[:Password])
-  session['user'] = user
+  User.create(name:      params[:Name],
+              email:     params[:Email],
+              password:  params[:Password])
+  user = User.first(:email => params[:Email])
+  session[:user] = user
   redirect to('/property')
 end
 
-get '/property' do
-  'Welcome ' + session['user'].name
-end
 
 run! if app_file == $0
 
