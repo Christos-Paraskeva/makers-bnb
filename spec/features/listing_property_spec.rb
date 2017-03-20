@@ -1,4 +1,4 @@
-# require 'spec_helper'
+#require 'spec_helper'
 
 feature 'As a user' do
   scenario 'I can list a property' do
