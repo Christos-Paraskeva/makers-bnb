@@ -1,3 +1,9 @@
 <form action='/property/new' method='get'>
   <button type='button'> <input type='submit' value='List Property'</button>
-<form
+<form>
+<li>
+<% @property.each do |n| %>
+  <%= n.name %>
+  <% end %>
+
+</li>
