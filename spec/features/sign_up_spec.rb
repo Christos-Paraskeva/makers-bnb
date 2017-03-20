@@ -10,7 +10,7 @@ feature 'Signing up' do
     fill_in 'Name', with: 'Alex'
     fill_in 'Email', with: 'aleximm@immsinns.com'
     fill_in 'Password', with: 'secret123'
-    click_button 'Submit'
-    expect(page).to have_content 'Welcome Alex!'
+    click_button "Submit"
+    expect(page).to have_content "Welcome Alex"
   end
 end
