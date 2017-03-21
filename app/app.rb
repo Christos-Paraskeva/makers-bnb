@@ -45,8 +45,6 @@ get '/property' do
 end
 
 post '/property' do
-  puts 'hello'
-
   Property.create(title: params[:title],
                   description: params[:description],
                   price_per_night: params[:price_per_night],
@@ -57,6 +55,11 @@ end
 
 get '/property/new' do
   erb :'links/listing_property'
+end
+
+post '/log_out' do
+  session[:user] = nil
+  redirect '/'
 end
 
 run! if app_file == $0

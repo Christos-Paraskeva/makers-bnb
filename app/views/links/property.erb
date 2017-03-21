@@ -1,6 +1,9 @@
 <h1> Welcome <%=@user.name%> </h1>
+<form action='/log_out' method='post'>
+  <input type='submit' value='Log Out'/>
+</form>
 <form action='/property/new' method='get'>
-  <button type='button'> <input type='submit' value='List Property'</button>
+  <input type='submit' value='List Property'/>
 </form>
 <li>
 <% @property.each do |n| %>

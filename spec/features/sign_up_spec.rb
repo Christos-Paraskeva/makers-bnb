@@ -6,11 +6,7 @@ feature 'Signing up' do
 
   scenario 'user can sign up' do
     visit '/'
-    click_link 'Sign up'
-    fill_in 'name', with: 'Alex'
-    fill_in 'email', with: 'aleximm@immsinns.com'
-    fill_in 'password', with: 'secret123'
-    click_button "Submit"
+    user_sign_up
     expect(page).to have_content "Welcome Alex"
   end
 end
