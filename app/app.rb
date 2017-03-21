@@ -3,7 +3,7 @@ ENV['RACK_ENV'] ||= 'development'
 require 'sinatra'
 require_relative 'database_setup'
 require_relative 'models/user'
-require_relative './models/property'
+require_relative 'models/property'
 
 class MakersBNB < Sinatra::Base
   enable :sessions
@@ -32,7 +32,7 @@ end
 
 get '/property' do
   @property = Property.all
-  @user = User.name
+  @user = session[:user]
   erb :'links/property'
 end
 

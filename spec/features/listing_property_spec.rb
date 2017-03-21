@@ -1,8 +1,11 @@
-#require 'spec_helper'
-
 feature 'As a user' do
   scenario 'I can list a property' do
-    visit ('/property')
+    visit '/'
+    click_link 'Sign up'
+    fill_in 'name', with: 'Alex'
+    fill_in 'email', with: 'aleximm@immsinns.com'
+    fill_in 'password', with: 'secret123'
+    click_button("Submit")
     click_button('List Property')
     expect(current_path).to eq '/property/new'
     fill_in :title, with: "Imm's Inn"
