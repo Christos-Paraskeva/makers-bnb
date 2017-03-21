@@ -12,11 +12,16 @@ end
 
 get '/property' do
   @property = Property.all
+  @user = User.name
   erb :'links/property'
 end
 
 post '/property' do
-  property = Property.create(name: params[:name])
+  Property.create(title: params[:title],
+                  description: params[:description],
+                  price_per_night: params[:price_per_night],
+                  location: params[:location],
+                  available: params[:available])
   redirect '/property'
 end
 
