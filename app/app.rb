@@ -19,6 +19,9 @@ end
 
 post '/log_in' do
   session[:user] = User.first(email: params[:email])
+  if (session[:user] == nil) || (session[:user].password != params[:password])
+    raise 'Incorrect Login Details'
+  end
   redirect '/property'
 end
 
