@@ -14,11 +14,19 @@ get '/' do
 end
 
 get '/log_in' do
-  erb :log_in
+  erb :'user/log_in'
+end
+
+post '/log_in' do
+  session[:user] = User.first(email: params[:email])
+  if (session[:user] == nil) || (session[:user].password != params[:password])
+    raise 'Incorrect Login Details'
+  end
+  redirect '/property'
 end
 
 get '/sign_up' do
-  erb :sign_up
+  erb :'user/sign_up'
 end
 
 post '/sign_up' do
