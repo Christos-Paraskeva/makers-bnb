@@ -14,7 +14,7 @@ get '/' do
 end
 
 get '/log_in' do
-  erb :log_in
+  erb :'user/log_in'
 end
 
 post '/log_in' do
@@ -26,7 +26,7 @@ post '/log_in' do
 end
 
 get '/sign_up' do
-  erb :sign_up
+  erb :'user/sign_up'
 end
 
 post '/sign_up' do
