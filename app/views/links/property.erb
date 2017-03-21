@@ -1,0 +1,14 @@
+<h1> Welcome, <%=@user%> </h1>
+<form action='/property/new' method='get'>
+  <button type='button'> <input type='submit' value='List Property'</button>
+<form>
+<li>
+<% @property.each do |n| %>
+  <%= n.title %>
+  <%= n.description %>
+  <%= n.price_per_night %>
+  <%= n.location %>
+  <%= n.available %>
+  <% end %>
+
+</li>
