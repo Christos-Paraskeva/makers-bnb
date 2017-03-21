@@ -37,6 +37,8 @@ get '/property' do
 end
 
 post '/property' do
+  puts 'hello'
+
   Property.create(title: params[:title],
                   description: params[:description],
                   price_per_night: params[:price_per_night],
