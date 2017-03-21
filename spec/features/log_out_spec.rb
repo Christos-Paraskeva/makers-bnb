@@ -7,6 +7,8 @@ feature 'As a user' do
     visit '/'
     user_sign_up
     click_button('Log Out')
-    expect(current_path).not_to have_content("Welcome Alex")
+    expect(page).not_to have_content("Welcome Alex")
+    
+    expect(page).to have_content("Sign up")
   end
 end
