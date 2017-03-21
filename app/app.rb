@@ -34,8 +34,8 @@ class MakersBNB < Sinatra::Base
 
   post '/sign_up' do
     password_digest = Password.create(params[:password])
-    User.create(name:        params[:name],
-                email:       params[:email],
+    User.create(name:             params[:name],
+                email:            params[:email],
                 password_digest:  password_digest)
     user = User.first(email: params[:email])
     session[:user] = user
