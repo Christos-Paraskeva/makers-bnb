@@ -5,14 +5,15 @@
 <form action='/property/new' method='get'>
   <input type='submit' value='List Property'/>
 </form>
-<li>
+<ul>
 <% @property.each do |n| %>
-  <%= n.title %>
-  <%= n.description %>
-  <%= n.price_per_night %>
-  <%= n.location %>
-  <%= n.available %>
-  Host's email: <%= n.user.email %>
+  <b><%= n.title %></b></li>
+  <li> <%= n.description %></li>
+  <li> <%= n.price_per_night %></li>
+  <li> <%= n.location %></li>
+  <li> <%= n.available %></li>
+  <li>Host's email: <%= n.user.email %></li>
+  <br>
   <% end %>
 
-</li>
+</ul>
