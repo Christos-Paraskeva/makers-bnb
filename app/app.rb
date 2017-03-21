@@ -7,6 +7,8 @@ require_relative 'models/property'
 
 class MakersBNB < Sinatra::Base
   enable :sessions
+  set :session_secret, "here be dragons"
+
 
 get '/' do
   'Welcome!'
@@ -45,14 +47,12 @@ get '/property' do
 end
 
 post '/property' do
-x =  Property.create(title: params[:title],
-                  description: params[:description],
-                  price_per_night: params[:price_per_night],
-                  location: params[:location],
-                  available: params[:available],
-                  user_id: session[:user].id)
-                  p x.errors.full_messages.flatten.join(', ')
-
+  Property.create(title:            params[:title],
+                  description:      params[:description],
+                  price_per_night:  params[:price_per_night],
+                  location:         params[:location],
+                  available:        params[:available],
+                  user_id:          session[:user].id)
   redirect '/property'
 end
 
