@@ -14,11 +14,11 @@ get '/' do
 end
 
 get '/log_in' do
-  erb :log_in
+  erb :'user/log_in'
 end
 
 get '/sign_up' do
-  erb :sign_up
+  erb :'user/sign_up'
 end
 
 post '/sign_up' do
@@ -37,8 +37,6 @@ get '/property' do
 end
 
 post '/property' do
-  puts 'hello'
-
   Property.create(title: params[:title],
                   description: params[:description],
                   price_per_night: params[:price_per_night],
