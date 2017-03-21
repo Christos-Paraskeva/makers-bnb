@@ -9,4 +9,3 @@ DataMapper.finalize
 DataMapper.auto_upgrade!
 
 # this can be used to debug datamapper errors and get more clarity
-# p x.errors.full_messages.flatten.join(', ')

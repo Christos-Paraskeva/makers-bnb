@@ -45,11 +45,14 @@ get '/property' do
 end
 
 post '/property' do
-  Property.create(title: params[:title],
+x =  Property.create(title: params[:title],
                   description: params[:description],
                   price_per_night: params[:price_per_night],
                   location: params[:location],
-                  available: params[:available])
+                  available: params[:available],
+                  user_id: session[:user].id)
+                  p x.errors.full_messages.flatten.join(', ')
+
   redirect '/property'
 end
 
