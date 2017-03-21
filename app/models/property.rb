@@ -12,5 +12,6 @@ property :price_per_night,Integer
 property :location,       String
 property :available,      String
 
+belongs_to :user
 
 end

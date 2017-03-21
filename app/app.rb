@@ -8,6 +8,8 @@ require 'bcrypt'
 
 class MakersBNB < Sinatra::Base
   enable :sessions
+  set :session_secret, "here be dragons"
+
 
   include BCrypt
 
@@ -42,20 +44,23 @@ class MakersBNB < Sinatra::Base
     redirect to('/property')
   end
 
+
+post '/property' do
+  Property.create(title:            params[:title],
+                  description:      params[:description],
+                  price_per_night:  params[:price_per_night],
+                  location:         params[:location],
+                  available:        params[:available],
+                  user_id:          session[:user].id)
+  redirect '/property'
+end
+
   get '/property' do
     @property = Property.all
     @user = session[:user]
     erb :'links/property'
   end
 
-  post '/property' do
-    Property.create(title: params[:title],
-                    description: params[:description],
-                    price_per_night: params[:price_per_night],
-                    location: params[:location],
-                    available: params[:available])
-    redirect '/property'
-  end
 
   get '/property/new' do
     erb :'links/listing_property'

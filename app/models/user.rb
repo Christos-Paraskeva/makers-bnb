@@ -9,6 +9,8 @@ class User
   property :email,     String
   property :password_digest,  Text
 
+  has n, :propertys
+
   def self.check_password(email, password)
     user = first(email: email)
     if (user && BCrypt::Password.new(user.password_digest)) == password
