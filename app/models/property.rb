@@ -11,7 +11,7 @@ property :description,     String
 property :price_per_night, Integer
 property :location,        String
 property :available,       String
-property :available_from,  String
+property :available_from,  Date
 
 belongs_to :user
 
