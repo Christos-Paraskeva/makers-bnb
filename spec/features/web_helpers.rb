@@ -11,6 +11,7 @@ def list_a_new_property
   fill_in :description, with: "Very Nice"
   fill_in :price_per_night, with: "50"
   fill_in :location, with: "London"
-  fill_in :available, with: "March"
-  click_button "Submit" 
+  fill_in :available_from, with: "05-01-2017"
+  fill_in :available_to, with: "09-02-2017"
+  click_button "Submit"
 end

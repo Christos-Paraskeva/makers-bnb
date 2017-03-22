@@ -11,8 +11,9 @@
   <li> <%= n.description %></li>
   <li> <%= n.price_per_night %></li>
   <li> <%= n.location %></li>
-  <li> <%= n.available %></li>
   <li>Host's email: <%= n.user.email %></li>
+  <li> <%= (n.available_from).to_s.split('-').reverse.join('/') %></li>
+  <li> <%= (n.available_to).to_s.split('-').reverse.join('/') %></li>
   <br>
   <% end %>
 
