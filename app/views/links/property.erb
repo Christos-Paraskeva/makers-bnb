@@ -18,7 +18,7 @@
   <br>
   <form action="/request_booking" method='post'>
     <input type='hidden' value='<%= n.id %>' name='property_id'/>
-    <input type='submit' value="Request Booking" name="request_booking<%= n.id %>"/> 
+    <input type='submit' value="Request Booking" id='request_booking<%=n.id%>'/>
   </form>
   <% end %>
 
