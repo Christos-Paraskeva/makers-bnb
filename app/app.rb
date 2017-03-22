@@ -71,6 +71,16 @@ end
     redirect '/'
   end
 
+  post '/request_booking' do
+    redirect '/request_booking'
+  end
+
+  get '/request_booking' do
+
+    
+  end
+
+
   run! if app_file == $0
 
 end
