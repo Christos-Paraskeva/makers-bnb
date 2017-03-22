@@ -15,6 +15,10 @@
   <li> <%= (n.available_from).to_s.split('-').reverse.join('/') %></li>
   <li> <%= (n.available_to).to_s.split('-').reverse.join('/') %></li>
   <br>
+  <form action="/request_booking" method='post'>
+    <input type='hidden' value='<%= n.id %>' name='property_id'/>
+    <input type='submit' value="Request Booking"/>
+  </form>
   <% end %>
 
 </ul>
