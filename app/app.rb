@@ -50,11 +50,9 @@ post '/property' do
                   description:      params[:description],
                   price_per_night:  params[:price_per_night],
                   location:         params[:location],
-                  available:        params[:available],
                   available_from:   params[:available_from],
                   available_to:     params[:available_to],
                   user_id:          session[:user].id)
-  p params
   redirect '/property'
 end
 
