@@ -8,6 +8,7 @@
 <ul>
 <% @property.each do |n| %>
   <b><%= n.title %></b>
+
   <li> <%= n.description %></li>
   <li> <%= n.price_per_night %></li>
   <li> <%= n.location %></li>
@@ -17,7 +18,7 @@
   <br>
   <form action="/request_booking" method='post'>
     <input type='hidden' value='<%= n.id %>' name='property_id'/>
-    <input type='submit' value="Request Booking"/>
+    <input type='submit' value="Request Booking" name="request_booking<%= n.id %>"/> 
   </form>
   <% end %>
 
