@@ -13,10 +13,11 @@ feature 'As a user' do
     click_button "Submit"
     click_button "Request Booking"
     expect(page).to have_content("Request Booking")
-    fill_in 'start_date', with: '12/11/17'
-    fill_in 'end_date', with: '13/11/17'
+    fill_in 'start_date', with: '12-11-17'
+    fill_in 'end_date', with: '13-11-17'
     click_button 'Submit Booking'
     expect(page).to have_current_path '/submit_request'
     expect(page).to have_content 'Request sent'
+    expect(page).to have_content '1'
   end
 end

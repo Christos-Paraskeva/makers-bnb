@@ -83,18 +83,17 @@ end
   end
 
   post '/submit_request' do
-    request = Request.new(start_date:             params[:start_date],
+    request = Request.create(start_date:             params[:start_date],
                              end_date:               params[:end_date],
                              confirmation_status:    false,
                              user_id:                session[:user].id,
                              property_id:            session[:property_id])
-    request.save
     session[:request_id] = request.id
     redirect '/submit_request'
   end
 
   get '/submit_request' do
-    @request = Request.first(id: session[:request_id])
+    @current_request = Request.first(id: session[:request_id])
     erb :'requests/submit_request'
   end
 
