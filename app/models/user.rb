@@ -10,6 +10,7 @@ class User
   property :password_digest,  Text
 
   has n, :propertys
+  has n, :requests
 
   def self.check_password(email, password)
     user = first(email: email)

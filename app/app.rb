@@ -1,9 +1,10 @@
 ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra'
-require_relative 'database_setup'
 require_relative 'models/user'
 require_relative 'models/property'
+require_relative 'models/request'
+require_relative 'database_setup'
 require 'bcrypt'
 
 class MakersBNB < Sinatra::Base
@@ -72,14 +73,30 @@ end
   end
 
   post '/request_booking' do
+    session[:property_id] = params[:property_id]
     redirect '/request_booking'
   end
 
   get '/request_booking' do
-
-    
+    @property = Property.first(id: session[:property_id])
+    erb :'requests/new_request'
   end
 
+  post '/submit_request' do
+    request = Request.new(start_date:             params[:start_date],
+                             end_date:               params[:end_date],
+                             confirmation_status:    false,
+                             user_id:                session[:user].id,
+                             property_id:            session[:property_id])
+    request.save
+    session[:request_id] = request.id
+    redirect '/submit_request'
+  end
+
+  get '/submit_request' do
+    @request = Request.first(id: session[:request_id])
+    erb :'requests/submit_request'
+  end
 
   run! if app_file == $0
 
