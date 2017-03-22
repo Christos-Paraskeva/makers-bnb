@@ -52,6 +52,7 @@ post '/property' do
                   location:         params[:location],
                   available:        params[:available],
                   available_from:   params[:available_from],
+                  available_to:     params[:available_to],
                   user_id:          session[:user].id)
   p params
   redirect '/property'
