@@ -5,12 +5,13 @@ class Property
 
 include DataMapper::Resource
 
-property :id,             Serial
-property :title,          String
-property :description,    String
-property :price_per_night,Integer
-property :location,       String
-property :available,      String
+property :id,              Serial
+property :title,           String
+property :description,     String
+property :price_per_night, Integer
+property :location,        String
+property :available,       String
+property :available_from,  String
 
 belongs_to :user
 
