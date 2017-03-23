@@ -12,6 +12,7 @@ class Property
   property :location,       String
   property :available_from, Date
   property :available_to,   Date
+  property :image_url,      Text
 
   belongs_to :user
   has n, :requests

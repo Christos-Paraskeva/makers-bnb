@@ -25,6 +25,7 @@
       <b>Host's email:</b> <%= n.user.email %></br>
       <b>Availability:</b> <%= (n.available_from).to_s.split('-').reverse.join('/') %> - <%= (n.available_to).to_s.split('-').reverse.join('/') %></li>
       <br>
+      <img src=<%= n.image_url %></br>
       <form action="/request_booking" method='post'>
        <input type='hidden' value='<%= n.id %>' name='property_id'/>
        <input type='submit' value="Request Booking" id='request_booking<%=n.id%>' class='button'/>
