@@ -97,6 +97,7 @@ end
       redirect '/submit_request'
     else
       flash.now[:request_not_sent] = "Booking request could not be sent!"
+      erb :'requests/new_request'
     end
   end
 

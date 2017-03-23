@@ -2,6 +2,10 @@
 <body align='center'>
 <h1> Request Booking </h1>
 
+<% if flash[:request_not_sent] %>
+  <b><%= flash[:request_not_sent] %></b></br>
+<% end %>
+
   <form action='/submit_request' method='post'>
     <label for='start_date'>
       Start Date: <input type='date' name='start_date'/>
@@ -11,9 +15,5 @@
     </label></br>
     <input type='submit' value='Submit Booking'/>
   </form>
-
-<% if flash[:request_not_sent] %>
-  <b><%= flash[:request_not_sent] %></b>
-<% end %>
 
 </body>
