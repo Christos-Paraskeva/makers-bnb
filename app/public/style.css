@@ -1,14 +1,16 @@
 html, body {
-            height: 100%;
-            margin: 0;
-            font-family: Poppins, sans-serif;
-        }
+  height: 100%;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  color: #2C3E50
+}
 
 form, table {
   display: inline;
   margin:0px;
   padding:0px;
 }
+
 p, ul {
   font-size: 25px;
   line-height: 30px;
@@ -28,6 +30,11 @@ h1, h2, h3 {
   padding: 10px;
   text-align: left;
   margin-bottom: 50px;
+  font-size: 20px;
+}
+
+.title {
+  font-size: 30px;
 }
 
 .big_div {
@@ -56,19 +63,10 @@ h1, h2, h3 {
   color: #2C3E50;
 }
 
-.textbox{
-  height: 30px;
-  border: 3px inset;
-  color: white;
-  background-color: dodgerblue;
-  padding: 3px;
-}
-
-.peepcontent{
-  border: 3px inset;
-  color: white;
-  background-color: dodgerblue;
-  padding: 3px;
+.prices {
+  font-size: 20px;
+  display: inline;
+  float: right;
 }
 
 .page {
@@ -76,5 +74,4 @@ h1, h2, h3 {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
 }

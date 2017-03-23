@@ -1,6 +1,6 @@
 <html class='page'>
   <head>
-    <link rel="stylesheet" href="<%= url('/style.css') %>" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Montserrat|Poppins|Russo+One" rel="stylesheet">
   </head>
   <body>
@@ -13,21 +13,24 @@
     <div class="big_div">
       <h1>Imm's Inns</h1></br>
       <a href='/property/new' class='button'>List Property</a>
+
     <% @property.each do |n| %>
       <div class="properties_div">
-      <ul>
-      <b><%= n.title %></b>
-      <li> <%= n.description %></li>
-      <li> <%= n.price_per_night %></li>
-      <li> <%= n.location %></li>
-      <li>Host's email: <%= n.user.email %></li>
-      <li> <%= (n.available_from).to_s.split('-').reverse.join('/') %> - <%= (n.available_to).to_s.split('-').reverse.join('/') %></li>
+      <b class="title"><%= n.title %></b>
+      <li class="prices"> £<%= n.price_per_night %> per night</li></br>
+      <b>Location:</b> <%= n.location %></br>
+      <b>Description:</b></br>
+      <%= n.description %></br>
+
+      <b>Host's email:</b> <%= n.user.email %></br>
+      <b>Availability:</b> <%= (n.available_from).to_s.split('-').reverse.join('/') %> - <%= (n.available_to).to_s.split('-').reverse.join('/') %></li>
       <br>
       <form action="/request_booking" method='post'>
        <input type='hidden' value='<%= n.id %>' name='property_id'/>
        <input type='submit' value="Request Booking" id='request_booking<%=n.id%>' class='button'/>
-     </form></ul>
-      </div>
+     </form>
+   </div>
+
       <% end %>
   </div>
 
