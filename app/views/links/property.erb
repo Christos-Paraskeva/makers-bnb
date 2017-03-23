@@ -15,7 +15,8 @@
   <li>Host's email: <%= n.user.email %></li>
   <li> <%= (n.available_from).to_s.split('-').reverse.join('/') %></li>
   <li> <%= (n.available_to).to_s.split('-').reverse.join('/') %></li>
-  <li> <img src="<%= n.image_url %>"> </li>
+  <!-- <li> <img src="<%= n.image_url %>"> </li> -->
+  <li> <img src="http://www.bigpicturebigsound.com/artman2/uploads/1/star-wars-home-theater.jpg">
   <br>
   <form action="/request_booking" method='post'>
     <input type='hidden' value='<%= n.id %>' name='property_id'/>
