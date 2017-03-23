@@ -4,6 +4,7 @@
     <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Montserrat|Poppins|Russo+One" rel="stylesheet">
   </head>
   <body>
+
     <h1> Welcome <%=@user.name%> </h1>
     <form action='/log_out' method='post'>
       <input type='submit' value='Log Out'/>
@@ -11,8 +12,13 @@
     <form action='/property/new' method='get'>
       <input type='submit' value='List Property'/>
     </form>
-    <ul>
-      <% @property.each do |n| %>
+
+    <div class="big_div">
+      <h1>Imm's Inns</h1><br>
+
+    <% @property.each do |n| %>
+      <div class="properties_div">
+      <ul>
       <b><%= n.title %></b>
       <li> <%= n.description %></li>
       <li> <%= n.price_per_night %></li>
@@ -22,10 +28,12 @@
       <li> <%= (n.available_to).to_s.split('-').reverse.join('/') %></li>
       <br>
       <form action="/request_booking" method='post'>
-        <input type='hidden' value='<%= n.id %>' name='property_id'/>
-        <input type='submit' value="Request Booking" id='request_booking<%=n.id%>'/>
-      </form>
+       <input type='hidden' value='<%= n.id %>' name='property_id'/>
+       <input type='submit' value="Request Booking" id='request_booking<%=n.id%>'/>
+     </form></ul>
+   </div>
       <% end %>
-    </ul>
+  </div>
+
   </body>
 </html>

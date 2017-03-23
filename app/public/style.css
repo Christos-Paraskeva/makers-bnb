@@ -1,10 +1,31 @@
-p, ul, {
+p, ul {
+  font-family: Poppins, sans-serif;
   font-size: 25px;
   line-height: 30px;
+  color: #2C3E50
 }
 
 h1, h2, h3 {
   font-family: Poppins, sans-serif;
+  color: #2C3E50
+}
+
+.properties_div {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ECF0F1;
+  padding: 10px;
+  text-align: left;
+}
+
+.big_div {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  width: 650px;
+  background-color: #D5EEF5;
 }
 
 .field {
@@ -38,6 +59,8 @@ h1, h2, h3 {
 
 .page {
   background-image: url("https://images.unsplash.com/photo-1470091688026-38b51162c8df?dpr=2&auto=compress,format&fit=crop&w=1199&h=750&q=80&cs=tinysrgb&crop=");
-  background-color: ;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
 }
