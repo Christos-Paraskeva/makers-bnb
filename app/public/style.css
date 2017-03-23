@@ -1,0 +1,43 @@
+p, ul, {
+  font-size: 25px;
+  line-height: 30px;
+}
+
+h1, h2, h3 {
+  font-family: Poppins, sans-serif;
+}
+
+.field {
+  line-height: 20px;
+  font-size: 20px;
+}
+
+.button {
+  border: 2px outset white;
+  font-size: 20px;
+  background-color: dodgerblue;
+  text-decoration: none;
+  padding: 3px;
+  color: white;
+}
+
+.textbox{
+  height: 30px;
+  border: 3px inset;
+  color: white;
+  background-color: dodgerblue;
+  padding: 3px;
+}
+
+.peepcontent{
+  border: 3px inset;
+  color: white;
+  background-color: dodgerblue;
+  padding: 3px;
+}
+
+.page {
+  background-image: url("https://images.unsplash.com/photo-1470091688026-38b51162c8df?dpr=2&auto=compress,format&fit=crop&w=1199&h=750&q=80&cs=tinysrgb&crop=");
+  background-color: ;
+  color: white;
+}
