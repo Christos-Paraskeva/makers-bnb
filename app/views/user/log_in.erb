@@ -1,4 +1,10 @@
 <a href="/sign_up" value="Sign up">Sign up</a>
+<h2>Welcome to IMM's INN!</h2></br>
+<h3>(Don't judge a book by its cover...)</h3></br>
+
+<% if flash[:incorrect_login_details] %>
+  <b><%= flash[:incorrect_login_details] %></b></br>
+<% end %>
 
  <form action='/log_in' method='post'>
    <label for='email'>

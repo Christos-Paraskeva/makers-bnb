@@ -28,9 +28,12 @@ class MakersBNB < Sinatra::Base
   post '/log_in' do
     session[:user] = User.first(email: params[:email])
     if (session[:user] == nil) || (User.check_password(params[:email], params[:password]))
-      raise 'Incorrect Login Details'
+      flash.now[:incorrect_login_details] = "Your username or password is incorrect!"
+      erb :'user/log_in'
+  # raise 'Incorrect Login Details'
+    else
+      redirect '/property'
     end
-    redirect '/property'
   end
 
   get '/sign_up' do

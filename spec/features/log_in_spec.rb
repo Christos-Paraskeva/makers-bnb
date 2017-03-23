@@ -22,7 +22,8 @@ feature 'Logging in' do
     visit '/'
     fill_in 'email', with: 'alex@immsinns.com'
     fill_in 'password', with: 'secret123'
-    expect{click_button 'Log in'}.to raise_error "Incorrect Login Details"
+    click_button "Log in"
+    expect(page).to have_content "Your username or password is incorrect!"
   end
 
   scenario 'user must submit a correct password' do
@@ -35,6 +36,7 @@ feature 'Logging in' do
     visit '/'
     fill_in 'email', with: 'aleximm@immsinns.com'
     fill_in 'password', with: 'secret12'
-    expect{click_button 'Log in'}.to raise_error "Incorrect Login Details"
+    click_button "Log in"
+    expect(page).to have_content "Your username or password is incorrect!"
   end
 end
