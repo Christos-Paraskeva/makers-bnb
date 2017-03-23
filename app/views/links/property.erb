@@ -4,18 +4,15 @@
     <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Montserrat|Poppins|Russo+One" rel="stylesheet">
   </head>
   <body>
-
+    <header class='header'>
     <h1> Welcome <%=@user.name%> </h1>
     <form action='/log_out' method='post'>
-      <input type='submit' value='Log Out'/>
+      <input type='submit' value='Log Out' class='button'/>
     </form>
-    <form action='/property/new' method='get'>
-      <input type='submit' value='List Property'/>
-    </form>
-
+</header>
     <div class="big_div">
-      <h1>Imm's Inns</h1><br>
-
+      <h1>Imm's Inns</h1></br>
+      <a href='/property/new' class='button'>List Property</a>
     <% @property.each do |n| %>
       <div class="properties_div">
       <ul>
@@ -24,14 +21,13 @@
       <li> <%= n.price_per_night %></li>
       <li> <%= n.location %></li>
       <li>Host's email: <%= n.user.email %></li>
-      <li> <%= (n.available_from).to_s.split('-').reverse.join('/') %></li>
-      <li> <%= (n.available_to).to_s.split('-').reverse.join('/') %></li>
+      <li> <%= (n.available_from).to_s.split('-').reverse.join('/') %> - <%= (n.available_to).to_s.split('-').reverse.join('/') %></li>
       <br>
       <form action="/request_booking" method='post'>
        <input type='hidden' value='<%= n.id %>' name='property_id'/>
-       <input type='submit' value="Request Booking" id='request_booking<%=n.id%>'/>
+       <input type='submit' value="Request Booking" id='request_booking<%=n.id%>' class='button'/>
      </form></ul>
-   </div>
+      </div>
       <% end %>
   </div>
 
