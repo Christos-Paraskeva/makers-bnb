@@ -7,7 +7,6 @@ gem 'rack'
 gem 'sinatra'
 gem 'rerun'
 gem 'bcrypt'
-# gem 'dm-paperclip'
 
 group :test do
   gem 'database_cleaner'

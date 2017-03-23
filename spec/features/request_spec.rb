@@ -11,10 +11,7 @@ feature 'As a user' do
     fill_in 'email', with: 'eva@immsinns.com'
     fill_in 'password', with: 'secret123'
     click_button "Submit"
-    # within('section #property4') do
-      # click_button "Request Booking"
-    # end
-    click_button('request_booking4')
+    click_button('request_booking5')
     expect(page).to have_content("Request Booking")
     fill_in 'start_date', with: '12-11-17'
     fill_in 'end_date', with: '13-11-17'

@@ -60,10 +60,6 @@ end
 
   get '/property' do
     @property = Property.all
-
-    # @property.each do |n|
-    #   p n.id
-    # end
     @user = session[:user]
     erb :'links/property'
   end

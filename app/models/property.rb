@@ -4,8 +4,6 @@ require 'dm-postgres-adapter'
 class Property
 
   include DataMapper::Resource
-  # include Paperclip::Resource
-  # DataMapper::Property::String.length(400)
 
   property :id,             Serial
   property :title,          String
@@ -15,9 +13,6 @@ class Property
   property :available_from, Date
   property :available_to,   Date
   property :image_url,      String, :length => 250
-
-  # has_attached_file :avatar,
-  #                   :styles => { :medium => "400x340>" }
 
   belongs_to :user
   has n, :requests
