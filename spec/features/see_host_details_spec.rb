@@ -6,7 +6,7 @@ feature 'As a user' do
   scenario "I can see host's contact details" do
     visit '/'
     user_sign_up
-    click_button('List Property')
+    click_link('List Property')
     list_a_new_property
     expect(page).to have_content("aleximm@immsinns.com")
   end
