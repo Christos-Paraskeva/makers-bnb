@@ -14,6 +14,10 @@ class Property
   property :available_to,   Date
   property :image_url,      Text
 
+  # def available?(requested_date)
+  #   return true if requested_date >= self.start_date && requested_date < self.end_date
+  #   false
+  # end
   belongs_to :user
   has n, :requests
 end

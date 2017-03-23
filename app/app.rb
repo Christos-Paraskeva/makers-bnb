@@ -6,10 +6,12 @@ require_relative 'models/property'
 require_relative 'models/request'
 require_relative 'database_setup'
 require 'bcrypt'
+require 'sinatra/flash'
 
 class MakersBNB < Sinatra::Base
   enable :sessions
   set :session_secret, "here be dragons"
+  register Sinatra::Flash
 
 
   include BCrypt
@@ -85,13 +87,18 @@ end
   end
 
   post '/submit_request' do
-    request = Request.create(start_date:             params[:start_date],
+    request = Request.new(start_date:             params[:start_date],
                              end_date:               params[:end_date],
                              confirmation_status:    false,
                              user_id:                session[:user].id,
                              property_id:            session[:property_id])
-    session[:request_id] = request.id
-    redirect '/submit_request'
+    if request.save
+      session[:request_id] = request.id
+      redirect '/submit_request'
+    else
+      flash.now[:request_not_sent] = "Booking request could not be sent!"
+      erb :'requests/new_request'
+    end
   end
 
   get '/submit_request' do
