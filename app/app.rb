@@ -135,7 +135,6 @@ end
   end
 
   post '/profile/my_requests/:req_id' do
-    # session[:property_requests] = Request.all(:property_id => params[:property_id])
     req = Request.first(id: params[:req_id])
     req.update(confirmation_status: true)
     redirect "profile/my_requests/#{req.property_id}"
