@@ -8,7 +8,6 @@ feature 'As a user' do
     user_sign_up
     click_button('Log Out')
     expect(page).not_to have_content("Welcome Alex")
-    
     expect(page).to have_content("Sign up")
   end
 end
