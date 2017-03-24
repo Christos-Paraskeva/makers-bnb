@@ -1,0 +1,27 @@
+<html class='page'>
+<head>
+    <link rel="stylesheet" href="/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+</head>
+<body>
+  <header class='header'>
+  <% if session[:user] %>
+    <h1 class='white_font'> Welcome <%= session[:user].name%> </h1>
+
+    <a href='/profile/my_properties' class='button'>My Profile</a>
+
+    <a href='/property' class='button'>View Properties</a>
+
+    <form action='/log_out' method='post'>
+      <input type='submit' value='Log Out' class='button'/>
+    </form>
+
+  <% else %>
+
+    <h1 class="white_font">You are not logged in:</h1> <a href='/' class='button'>Login</a>
+    <a href="/sign_up" class='button'>Sign up</a>
+  <% end %>
+
+  </header>
+</body>
+</html>

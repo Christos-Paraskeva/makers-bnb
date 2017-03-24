@@ -69,7 +69,6 @@ end
     erb :'links/property'
   end
 
-
   get '/property/new' do
     erb :'links/listing_property'
   end
