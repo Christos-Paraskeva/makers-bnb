@@ -19,6 +19,10 @@
         <b>Description:</b></br>
         <%= n.description %></br>
         <b>Availability:</b> <%= (n.available_from).to_s.split('-').reverse.join('/') %> - <%= (n.available_to).to_s.split('-').reverse.join('/') %></li>
+        <form action="/profile/my_requests/<%=n.id%>" method='get'>
+         <!-- <input type='hidden' value='<%= n.id %>' name='property_id'/> -->
+         <input type='submit' value="See Requests" id='see_requests<%=n.id%>' class='button'/>
+       </form>
         </div><br>
       <% end %>
     <% else %>
@@ -26,6 +30,6 @@
       <h4> You have not listed any properties </h4>
     <% end %>
 
-  </div> -->
+  </div>
   </body>
 </html>

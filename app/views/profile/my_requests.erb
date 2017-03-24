@@ -1,0 +1,34 @@
+<html class='page'>
+<head>
+    <link rel="stylesheet" href="/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+</head>
+<body>
+  <header class='header'>
+    <h1> Welcome <%=@user.name%> </h1>
+    <form action='/log_out' method='post'>
+      <input type='submit' value='Log Out' class='button'/>
+    </form>
+    <a href='/profile/my_properties' class='button'>My Profile</a>
+    <a href='/property' class='button'>View Properties</a>
+  </header>
+
+    <div class="big_div">
+
+<% if (@property_requests) %>
+  <% @property_requests.each do |n| %>
+    <div class="properties_div">
+
+    <b>Start Date:</b> <%= n.start_date %></br>
+    <b>End Date:</b> <%= n.end_date %></br>
+    <b>Confirmed:</b> <%= n.confirmation_status%></li>
+    <form action='/profile/my_requests/<%=n.id %>' method='post'>
+      <input type='submit' value='Confirm' class='button'/>
+    </form>
+  </div>
+  <%end%>
+  <%end%>
+</div>
+
+  </body>
+</html>

@@ -126,6 +126,19 @@ end
     erb :'profile/my_properties'
   end
 
+  get '/profile/my_requests/:property_id' do
+    @user = session[:user]
+    session[:property_requests] = Request.all(:property_id => params[:property_id])
+    @property_requests = session[:property_requests]
+    erb :'profile/my_requests'
+  end
+
+  post '/profile/my_requests/:req_id' do
+    req = Request.first(id: params[:req_id])
+    req.update(confirmation_status: true)
+    redirect "profile/my_requests/#{req.property_id}"
+  end
+
   run! if app_file == $0
 
 end
