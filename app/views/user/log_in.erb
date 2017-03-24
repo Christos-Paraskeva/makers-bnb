@@ -1,17 +1,25 @@
-<a href="/sign_up" value="Sign up">Sign up</a>
-<h2>Welcome to IMM's INNS!</h2></br>
-<h3>(Don't judge a book by its cover...)</h3></br>
+<html class='page'>
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Montserrat|Poppins|Russo+One" rel="stylesheet">
+  </head>
+  <body align='center'>
+    <div class='centerlogin'>
 
 <% if flash[:incorrect_login_details] %>
   <b><%= flash[:incorrect_login_details] %></b></br>
 <% end %>
-
- <form action='/log_in' method='post'>
-   <label for='email'>
-     Email: <input type='email' name='email' required/>
-   </label>
-   <label for='password'>
-     Password: <input type='password' name='password' required/>
-   </label>
-   <input type='submit' value='Log in'/>
- </form>
+      <h1> Log in </h1></br>
+     <form action='/log_in' method='post'>
+       <label for='email'>
+         Email: <input type='email' name='email'/>
+       </label></br>
+       <label for='password'>
+         Password: <input type='password' name='password'/>
+       </label></br>
+       <input type='submit' value='Log in' class='button'/>
+   </form>
+   <a href="/sign_up" class='button'>Sign up</a>
+ </div>
+ </body>
+</html>
