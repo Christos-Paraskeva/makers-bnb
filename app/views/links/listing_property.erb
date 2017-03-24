@@ -1,24 +1,33 @@
-<h2> Property Information </h2>
-
-<form action='/property' method='post'>
+<html class='page'>
+<head>
+    <link rel="stylesheet" href="/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+</head>
+<body>
+<%= erb :'header' %>
+  <div class="centerlogin">
+    <h1> Property Information </h1><br>
+    <form action='/property' method='post'>
   <label for='title'>
-    Name: <input name='title' type='text' required>
+    <span class="textarea_label">Name:</span> <input name='title' type='text' class="textarea" required>
   </label>
   <label for='description'>
-    Description: <input name='description' type='text'>
+    <span class="textarea_label">Description:</span> <input name='description' class="textarea" type='text'>
   <label for='price_per_night'>
-    Price Per Night: <input name='price_per_night' type='text' required>
+    <span class="textarea_label">Price Per Night:</span> <input name='price_per_night' class="textarea" type='text' required>
   <label for='location'>
-    Location: <input name='location' type='text' required>
+    <span class="textarea_label">Location:</span> <input name='location' type='text' class="textarea" required>
   <label for='available_from'>
-    Available from: <input name='available_from' type='date' required>
+    <span class="textarea_label">Available from:</span> <input name='available_from' class="textarea" type='date' required>
   </label>
   <label for='available_to'>
-    Available to: <input name='available_to' type='date' required>
+    <span class="textarea_label">Available to:</span> <input name='available_to' class="textarea" type='date' required>
   </label>
   <label for='image_url'>
-    Image URL: <input name='image_url' type='url'>
+    <span class="textarea_label">Image URL:</span> <input name='image_url' class="textarea" type='url'>
   </label>
 
-  <input type='submit' value='Submit'>
+  <input type='submit' value='Submit' class='button'>
 </form>
+
+</div>

@@ -4,18 +4,18 @@
     <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Montserrat|Poppins|Russo+One" rel="stylesheet">
   </head>
   <body align='center'>
-    <div class='centerlogin'>
+    <div class='big_div'>
 
-<% if flash[:incorrect_login_details] %>
-  <b><%= flash[:incorrect_login_details] %></b></br>
-<% end %>
-      <h1> Log in </h1></br>
+  <h1> Log in </h1></br>
+    <% if flash[:incorrect_login_details] %>
+      <b><%= flash[:incorrect_login_details] %></b></br>
+    <% end %>
      <form action='/log_in' method='post'>
        <label for='email'>
-         Email: <input type='email' name='email'/>
+         <span class="textarea_label">Email:</span> <input type='email' class="textarea" name='email'/>
        </label></br>
        <label for='password'>
-         Password: <input type='password' name='password'/>
+         <span class="textarea_label">Password:</span> <input type='password' class="textarea" name='password'/>
        </label></br>
        <input type='submit' value='Log in' class='button'/>
    </form>
