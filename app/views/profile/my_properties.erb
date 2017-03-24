@@ -4,14 +4,8 @@
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 </head>
 <body>
-  <header class='header'>
-    <h1> Welcome <%=@user.name%> </h1>
-    <form action='/log_out' method='post'>
-      <input type='submit' value='Log Out' class='button'/>
-    </form>
-    <a href='/profile/my_properties' class='button'>My Profile</a>
-    <a href='/property' class='button'>View Properties</a>
-  </header>
+  
+  <%= erb :'header' %>
 
     <div class="big_div">
     <h1> <%= @user.name%>'s Profile </h1><br>
