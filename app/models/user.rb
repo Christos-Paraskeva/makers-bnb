@@ -6,7 +6,7 @@ class User
 
   property :id,        Serial
   property :name,      String
-  property :email,     String
+  property :email,     String, required: true, unique: true
   property :password_digest,  Text
 
   has n, :propertys

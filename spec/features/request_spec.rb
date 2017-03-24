@@ -2,7 +2,7 @@ feature 'As a user' do
   scenario 'I can request a booking for a property' do
     visit '/'
     user_sign_up
-    click_link('List Property')
+    click_link('List a New Property')
     expect(current_path).to eq '/property/new'
     list_a_new_property
     click_button('Log Out')

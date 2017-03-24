@@ -6,18 +6,22 @@ class Property
   include DataMapper::Resource
 
   property :id,             Serial
-  property :title,          String
+  property :title,          String,  required: true
   property :description,    String
-  property :price_per_night,Integer
-  property :location,       String
-  property :available_from, Date
-  property :available_to,   Date
-  property :image_url,      Text
+  property :price_per_night,Integer, required: true
+  property :location,       String,  required: true
+  property :available_from, Date,    required: true
+  property :available_to,   Date,    required: true
+  property :image_url,      Text    
 
-  # def available?(requested_date)
-  #   return true if requested_date >= self.start_date && requested_date < self.end_date
-  #   false
-  # end
   belongs_to :user
   has n, :requests
+
+  def available?(start_date, end_date)
+   if start_date >= self.available_from && end_date <= self.available_to
+     true
+   else
+     false
+   end
+  end
 end
