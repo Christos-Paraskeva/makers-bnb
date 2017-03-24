@@ -1,8 +1,12 @@
-html, body {
+body {
   height: 100%;
   margin: 0;
   font-family: 'Space Mono', monospace;
-  color: #2C3E50;
+  color: #2C3E50
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
 }
 
 form, table {
@@ -25,6 +29,14 @@ h1, h2, h3 {
 img.property_image {
     width: 600px;
     height: auto;
+}
+
+.centerlogin {
+  margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .properties_div {
@@ -66,6 +78,7 @@ img.property_image {
   text-decoration: none;
   padding: 3px;
   color: #2C3E50;
+  background-color: #D5EEF5;
   font-family: 'Space Mono', monospace;
 }
 
@@ -80,4 +93,39 @@ img.property_image {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #9ab5d1;
+}
+
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
 }
