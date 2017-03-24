@@ -28,9 +28,12 @@ class MakersBNB < Sinatra::Base
   post '/log_in' do
     session[:user] = User.first(email: params[:email])
     if (session[:user] == nil) || (User.check_password(params[:email], params[:password]))
-      raise 'Incorrect Login Details'
+      flash.now[:incorrect_login_details] = "Your username or password is incorrect!"
+      erb :'user/log_in'
+  # raise 'Incorrect Login Details'
+    else
+      redirect '/property'
     end
-    redirect '/property'
   end
 
   get '/sign_up' do
@@ -92,18 +95,36 @@ end
                              confirmation_status:    false,
                              user_id:                session[:user].id,
                              property_id:            session[:property_id])
-    if request.save
+    property = Property.first(id: session[:property_id])
+    if request.valid_request?
+        if request.save
+          if property.available?(params[:start_date], params[:end_date])
+      else
+        flash[:request_dates_not_available] = "Property is not available between those dates"
+        redirect '/request_booking'
+      end
       session[:request_id] = request.id
       redirect '/submit_request'
     else
-      flash.now[:request_not_sent] = "Booking request could not be sent!"
-      erb :'requests/new_request'
+      flash[:request_not_sent] = "Booking request could not be sent!"
+      redirect '/request_booking'
+    end
+    else
+      flash[:request_invalid] = "Start date must be before your end date"
+      redirect '/request_booking'
     end
   end
 
   get '/submit_request' do
     @current_request = Request.first(id: session[:request_id])
+    @property = Property.first(id: @current_request.property_id)
     erb :'requests/submit_request'
+  end
+
+  get '/profile/my_properties' do
+    @user = session[:user]
+    @user_properties = Property.all(:user_id => @user.id)
+    erb :'profile/my_properties'
   end
 
   run! if app_file == $0

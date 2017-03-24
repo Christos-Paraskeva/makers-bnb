@@ -5,6 +5,10 @@
   </head>
   <body align='center'>
     <div class='centerlogin'>
+
+<% if flash[:incorrect_login_details] %>
+  <b><%= flash[:incorrect_login_details] %></b></br>
+<% end %>
       <h1> Log in </h1></br>
      <form action='/log_in' method='post'>
        <label for='email'>
