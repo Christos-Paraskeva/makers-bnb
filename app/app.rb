@@ -99,6 +99,14 @@ end
     erb :'requests/submit_request'
   end
 
+  get '/profile/my_properties' do
+    # @user_id = session[:user].id
+    @user = session[:user]
+    @user_properties = Property.all(:user_id => @user.id)
+    @user = session[:user]
+    erb :'profile/my_properties'
+  end
+
   run! if app_file == $0
 
 end

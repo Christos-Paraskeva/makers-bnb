@@ -1,0 +1,16 @@
+<h1> <%= @user.name%>'s Profile </h1>
+<% if (@user_properties) %>
+  <% @user_properties.each do |n| %>
+    <div class="properties_div">
+    <b class="title"><%= n.title %></b>
+    <li class="prices"> £<%= n.price_per_night %> per night</li></br>
+    <img class="property_image" src=<%= n.image_url %>></br>
+    <b>Location:</b> <%= n.location %></br>
+    <b>Description:</b></br>
+    <%= n.description %></br>
+    <b>Availability:</b> <%= (n.available_from).to_s.split('-').reverse.join('/') %> - <%= (n.available_to).to_s.split('-').reverse.join('/') %></li>
+    <br>
+  <% end %>
+<% else %>
+  <h4> You have not listed any properties </h4>
+<% end %>
