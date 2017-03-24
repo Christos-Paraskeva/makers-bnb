@@ -2,7 +2,7 @@ feature 'Property has available date range' do
   scenario 'Renters can see available start date' do
     visit '/'
     user_sign_up
-    click_link('List Property')
+    click_link('List a New Property')
     fill_in :title, with: "Imm's Inn"
     fill_in :description, with: "Very Nice"
     fill_in :price_per_night, with: "50"
@@ -17,7 +17,7 @@ feature 'Property has available date range' do
   scenario 'Renters can see available end date' do
     visit '/'
     user_sign_up
-    click_link('List Property')
+    click_link('List a New Property')
     fill_in :title, with: "Imm's Inn"
     fill_in :description, with: "Very Nice"
     fill_in :price_per_night, with: "50"

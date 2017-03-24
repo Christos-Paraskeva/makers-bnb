@@ -1,14 +1,31 @@
-
+<html class='page'>
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+  </head>
 <body align='center'>
-<h1> Request Booking </h1>
+  <div class='centerlogin'>
+    <div class="big_div">
+    <h1> Request Booking </h1></br>
 
-<form action='/submit_request' method='post'>
-  <label for='start_date'>
-    Start Date: <input type='date' name='start_date'/>
-  </label></br>
-  <label for='end_date'>
-    End Date: <input type='date' name='end_date'/>
-  </label></br>
-  <input type='submit' value='Submit Booking'/>
-</form>
+    <% if flash[:request_invalid]%>
+        <b><%= flash[:request_invalid] %></b></br>
+      <% elsif flash.now[:request_dates_not_available] %>
+        <b><%= flash.now[:request_dates_not_available] %></b></br>
+      <% elsif flash[:request_not_sent] %>
+        <b><%= flash[:request_not_sent] %></b></br>
+    <% end %>
+
+    <form action='/submit_request' method='post'>
+      <label for='start_date'>
+        Start Date: <input type='date' name='start_date'/>
+      </label></br>
+      <label for='end_date'>
+        End Date: <input type='date' name='end_date'/>
+      </label></br>
+      <input type='submit' class='button' value='Submit Booking'/>
+    </form>
+  </div>
+</div>
 </body>
+</html>

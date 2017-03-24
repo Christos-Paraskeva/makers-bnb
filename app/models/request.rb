@@ -12,4 +12,8 @@ class Request
 
   belongs_to :user
   belongs_to :property
+
+  def valid_request?
+    self.start_date <= self.end_date ? true : false
+  end
 end
