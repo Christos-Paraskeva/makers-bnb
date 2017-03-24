@@ -1,4 +1,4 @@
-html, body {
+body {
   height: 100%;
   margin: 0;
   font-family: Poppins, sans-serif;
@@ -24,6 +24,14 @@ p, ul {
 h1, h2, h3 {
   display: inline;
   color: #2C3E50
+}
+
+.centerlogin {
+  margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .properties_div {
@@ -65,6 +73,7 @@ h1, h2, h3 {
   text-decoration: none;
   padding: 3px;
   color: #2C3E50;
+  background-color: #D5EEF5;
 }
 
 .prices {
