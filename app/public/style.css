@@ -1,7 +1,7 @@
 body {
   height: 100%;
   margin: 0;
-  font-family: Poppins, sans-serif;
+  font-family: 'Space Mono', monospace;
   color: #2C3E50
   animation: fadein 2s;
   -moz-animation: fadein 2s; /* Firefox */
@@ -23,7 +23,12 @@ p, ul {
 
 h1, h2, h3 {
   display: inline;
-  color: #2C3E50
+  color: #2C3E50;
+}
+
+img.property_image {
+    width: 600px;
+    height: auto;
 }
 
 .centerlogin {
@@ -74,6 +79,7 @@ h1, h2, h3 {
   padding: 3px;
   color: #2C3E50;
   background-color: #D5EEF5;
+  font-family: 'Space Mono', monospace;
 }
 
 .prices {
@@ -83,7 +89,7 @@ h1, h2, h3 {
 }
 
 .page {
-  background-image: url("https://images.unsplash.com/photo-1470091688026-38b51162c8df?dpr=2&auto=compress,format&fit=crop&w=1199&h=750&q=80&cs=tinysrgb&crop=");
+  background-image: url("https://images.unsplash.com/photo-1456154875099-97a3a56074d3?dpr=2&auto=format&fit=crop&w=1199&h=674&q=80&cs=tinysrgb&crop=");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
