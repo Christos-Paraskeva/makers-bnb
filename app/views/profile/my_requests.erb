@@ -22,9 +22,11 @@
     <b>Start Date:</b> <%= n.start_date %></br>
     <b>End Date:</b> <%= n.end_date %></br>
     <b>Confirmed:</b> <%= n.confirmation_status%></li>
+    <%if n.confirmation_status == false%>
     <form action='/profile/my_requests/<%=n.id %>' method='post'>
       <input type='submit' value='Confirm' class='button'/>
     </form>
+    <%end%>
   </div>
   <%end%>
   <%end%>
