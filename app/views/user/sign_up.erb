@@ -1,6 +1,23 @@
-<form action='/sign_up' method='post'>
-  Name:<input type='text' name='name' required></br>
-  Email:<input type='email' name='email' required></br>
-  Password:<input type='password' name='password' required></br>
-  <input type='submit' value='Submit'>
-</form>
+<html class='page'>
+<head>
+    <link rel="stylesheet" href="/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+</head>
+<body>
+
+  <%= erb :'header' %>
+
+    <div class="big_div">
+      <h1>Sign up to Imm's Space Inns</h1>
+  <form action='/sign_up' method='post'></br>
+    <span class="textarea_label">Name:</span><input type='text' name='name' class="textarea" required ></br>
+    <span class="textarea_label">Email:</span><input type='email' name='email' class="textarea" required></br>
+    <span class="textarea_label">Password:</span><input type='password' name='password' class="textarea" required></br>
+    <input type='submit' value='Submit' class='button'>
+  </form>
+</div>
+</div>
+
+
+</body>
+</html>

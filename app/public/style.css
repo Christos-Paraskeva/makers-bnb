@@ -23,7 +23,12 @@ p, ul {
 
 h1, h2, h3 {
   display: inline;
-  color: #2C3E50;
+  color: white;
+}
+
+header {
+  background-color: #1F2F4E;
+  padding-bottom: 10px;
 }
 
 img.property_image {
@@ -32,21 +37,28 @@ img.property_image {
 }
 
 .centerlogin {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+  background-color: #1F2F4E;
+  padding-bottom: 20px;
+  border:1px solid white;
   margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .properties_div {
   width: 600px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #ECF0F1;
+  background-color: #838C95;
   padding: 10px;
   text-align: left;
-  margin-bottom: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
   font-size: 20px;
 }
 
@@ -59,17 +71,41 @@ img.property_image {
   margin-left: auto;
   margin-right: auto;
   width: 650px;
-  background-color: #D5EEF5;
-  padding-bottom: 1px;
+  background-color: #1F2F4E;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  border:1px solid white;
 }
 
-header {
-  background-color: black;
-  padding-bottom: 10px;
+.textarea_label {
+  display: inline-block;
+   float: left;
+   clear: left;
+   width: 250px;
+   text-align: right;
+   margin: 10px;
+   color: white;
+}
+
+.textarea {
+  width: 50%;
+  height: 30px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  margin-right: 70px;
+  display: inline-block;
+  float: left;
+  font-size: 20px;
+  margin: 10px;
+  font-family: inherit;
 }
 
 h1.white_font {
   color: white;
+  line-height: 30px
 }
 
 .field {
@@ -81,7 +117,7 @@ h1.white_font {
   border: 2px outset white;
   font-size: 20px;
   text-decoration: none;
-  padding: 3px;
+  margin: 10px;
   color: #2C3E50;
   background-color: #D5EEF5;
   font-family: 'Space Mono', monospace;
@@ -94,7 +130,7 @@ h1.white_font {
 }
 
 .page {
-  background-image: url("https://images.unsplash.com/photo-1456154875099-97a3a56074d3?dpr=2&auto=format&fit=crop&w=1199&h=674&q=80&cs=tinysrgb&crop=");
+  background-image: url("http://i.imgur.com/X2iuknF.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
