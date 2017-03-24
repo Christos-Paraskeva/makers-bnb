@@ -8,7 +8,7 @@ feature 'Property has available date range' do
     fill_in :price_per_night, with: "50"
     fill_in :location, with: "London"
     fill_in :available_from, with: "05-01-2017"
-    fill_in :available_to, with: "09-02-2017"
+    fill_in :available_to, with: "09-12-2017"
     click_button "Submit"
     expect(page).to have_content("Imm's Inn")
     expect(page).to have_content("05/01/2017")
@@ -23,9 +23,9 @@ feature 'Property has available date range' do
     fill_in :price_per_night, with: "50"
     fill_in :location, with: "London"
     fill_in :available_from, with: "05-01-2017"
-    fill_in :available_to, with: "09-02-2017"
+    fill_in :available_to, with: "09-12-2017"
     click_button "Submit"
     expect(page).to have_content("Imm's Inn")
-    expect(page).to have_content("09/02/2017")
+    expect(page).to have_content("09/12/2017")
   end
 end
